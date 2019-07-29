@@ -30,5 +30,4 @@ WORKDIR /home/sage
 COPY scripts/post_install_sage.sh /tmp/
 RUN /tmp/post_install_sage.sh $SAGE_SRC_TARGET && sudo rm -rf /tmp/* && sync
 
-ENTRYPOINT [ "sage-entrypoint" ]
-CMD [ "sage" ]
+CMD [ "python3" ]

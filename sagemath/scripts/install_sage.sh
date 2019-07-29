@@ -30,7 +30,9 @@ cd sage
 # Here -E inherits the environment from root, however it's important to
 # include -H to set HOME=/home/sage, otherwise DOT_SAGE will not be set
 # correctly and the build will fail!
-sudo -H -E -u sage make || exit 1
+sudo -H -E -u sage make configure
+sudo -H -E -u sage ./configure --with-python3
+sudo -H -E -u sage make build
 
 # Add aliases for sage and sagemath
 ln -sf "${SAGE_SRC_TARGET}/sage/sage" /usr/bin/sage
